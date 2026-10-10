@@ -1,0 +1,875 @@
+:root {
+  --bg-gradient-start: #0079bf;
+  --bg-gradient-end: #5067bf;
+  --bg-solid: #0079bf;
+  --text-primary: #172b4d;
+  --text-secondary: #5e6c84;
+  --text-inverse: #fff;
+  --header-bg: rgba(0,0,0,0.15);
+  --header-button-bg: rgba(255,255,255,0.2);
+  --header-button-hover: rgba(255,255,255,0.32);
+  --header-divider: rgba(255,255,255,0.35);
+  --tab-inactive: rgba(255,255,255,0.75);
+  --tab-hover-bg: rgba(255,255,255,0.15);
+  --tab-active-bg: rgba(255,255,255,0.25);
+  --error-text: #ffb3b3;
+  --column-bg: #ebecf0;
+  --column-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  --column-drag-outline: #0079bf;
+  --column-count-bg: rgba(0,0,0,0.06);
+  --column-title-editing-bg: #fff;
+  --menu-hover-bg: rgba(0,0,0,0.08);
+  --card-bg: #fff;
+  --tooltip-bg: #fff;
+  --card-shadow: 0 1px 1px rgba(9,30,66,0.25);
+  --card-shadow-hover: 0 4px 8px rgba(9,30,66,0.3);
+  --card-border-hover: #0079bf;
+  --card-due-bg: #f2f2f2;
+  --card-due-overdue-bg: #ec9488;
+  --card-due-soon-bg: #f5cd28;
+  --card-due-soon-text: #172b4d;
+  /* Standardized scrollbar design tokens (shared by every scrollbar in the app) */
+  --scrollbar-size: 8px;
+  --scrollbar-radius: 4px;
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(0,0,0,0.2);
+  --scrollbar-thumb-hover: rgba(0,0,0,0.32);
+  --scrollbar-thumb-active: rgba(0,0,0,0.4);
+  /* Main WINDOW scrollbars sit on the blue board gradient, so they use
+     white-translucent thumbs (same language as the header controls).
+     Defined on :root (and overridden under html.dark) on purpose: the
+     viewport scrollbar pseudo-elements resolve variables from <html>,
+     so body.dark values never reach them. */
+  --scrollbar-thumb-window: rgba(255,255,255,0.28);
+  --scrollbar-thumb-window-hover: rgba(255,255,255,0.45);
+  --scrollbar-thumb-window-active: rgba(255,255,255,0.6);
+  --add-btn-text: #5e6c84;
+  --add-btn-hover-bg: rgba(0,0,0,0.08);
+  --add-btn-hover-text: #172b4d;
+  --add-column-btn-bg: rgba(255,255,255,0.25);
+  --add-column-btn-hover: rgba(255,255,255,0.35);
+  --input-border: #dfe1e6;
+  --input-bg: #fff;
+  --input-focus: #0079bf;
+  --border-color: #dfe1e6;
+  --primary-btn-bg: #0079bf;
+  --primary-btn-hover: #026aa7;
+  --modal-bg: #f4f5f7;
+  --modal-overlay: rgba(0,0,0,0.6);
+  --delete-btn: #eb5a46;
+  --delete-btn-hover: rgba(235,90,70,0.1);
+  --label-chip-selected: #172b4d;
+  --placeholder-bg: rgba(0,0,0,0.12);
+  --placeholder-border: rgba(255,255,255,0.5);
+}
+body.dark {
+  --bg-gradient-start: #3d4045;
+  --bg-gradient-end: #4a4f55;
+  --bg-solid: #4a4f55;
+  --text-primary: #e2e4e8;
+  --text-secondary: #9a9ea5;
+  --text-inverse: #e2e4e8;
+  --header-bg: rgba(0,0,0,0.25);
+  --header-button-bg: rgba(255,255,255,0.08);
+  --header-button-hover: rgba(255,255,255,0.16);
+  --header-divider: rgba(255,255,255,0.15);
+  --tab-inactive: rgba(255,255,255,0.55);
+  --tab-hover-bg: rgba(255,255,255,0.08);
+  --tab-active-bg: rgba(255,255,255,0.16);
+  --error-text: #ff8a80;
+  --column-bg: #121212;
+  --column-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  --column-drag-outline: #579dff;
+  --column-count-bg: rgba(255,255,255,0.08);
+  --column-title-editing-bg: #1e1e1e;
+  --menu-hover-bg: rgba(255,255,255,0.08);
+  --card-bg: #252528;
+  --tooltip-bg: #252528;
+  --card-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.5);
+  --card-border-hover: #579dff;
+  --card-due-bg: #333336;
+  --card-due-overdue-bg: #c75450;
+  --card-due-soon-bg: #d4a72c;
+  --card-due-soon-text: #121212;
+  --scrollbar-thumb: rgba(255,255,255,0.15);
+  --scrollbar-thumb-hover: rgba(255,255,255,0.28);
+  --scrollbar-thumb-active: rgba(255,255,255,0.38);
+  --add-btn-text: #9a9ea5;
+  --add-btn-hover-bg: rgba(255,255,255,0.06);
+  --add-btn-hover-text: #e2e4e8;
+  --add-column-btn-bg: rgba(255,255,255,0.08);
+  --add-column-btn-hover: rgba(255,255,255,0.14);
+  --input-border: #3a3a3d;
+  --input-bg: #1e1e1e;
+  --input-focus: #579dff;
+  --border-color: #3a3a3d;
+  --primary-btn-bg: #579dff;
+  --primary-btn-hover: #7cb0ff;
+  --modal-bg: #1e1e1e;
+  --modal-overlay: rgba(0,0,0,0.75);
+  --delete-btn: #ff8a80;
+  --delete-btn-hover: rgba(255,138,128,0.12);
+  --label-chip-selected: #e2e4e8;
+  --placeholder-bg: rgba(255,255,255,0.06);
+  --placeholder-border: rgba(255,255,255,0.2);
+}
+/* Dark-theme tokens for the main WINDOW scrollbars. Mirrors the standard
+   dark thumb tokens so window bars match the column bars; scoped to html
+   because viewport scrollbar pseudo-elements inherit from <html>, not <body>.
+   --bg-solid is included for the same reason: html's own background paints
+   the window canvas (scrollbar gutters and over-scroll area). */
+html.dark {
+  --bg-solid: #4a4f55;
+  --scrollbar-thumb-window: rgba(255,255,255,0.15);
+  --scrollbar-thumb-window-hover: rgba(255,255,255,0.28);
+  --scrollbar-thumb-window-active: rgba(255,255,255,0.38);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg-solid); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  min-height: 100vh;
+  min-width: max-content;
+  color: var(--text-primary);
+}
+
+.card, .column-header, .column-title, .column-count, .tabs, .tab-btn, header h1 {
+  user-select: none;
+}
+
+header {
+  background: var(--header-bg);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-inverse);
+  backdrop-filter: blur(6px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+header h1 { font-size: 20px; font-weight: 600; letter-spacing: 0.3px; }
+header .actions { display: flex; gap: 10px; align-items: center; }
+header .status { font-size: 12px; opacity: 0.8; }
+header .status.error { color: var(--error-text); }
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--header-divider);
+}
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+.tab-btn {
+  background: transparent;
+  color: var(--tab-inactive);
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.tab-btn:hover { background: var(--tab-hover-bg); color: var(--text-inverse); }
+.tab-btn.active {
+  background: var(--tab-active-bg);
+  color: var(--text-inverse);
+  font-weight: 600;
+}
+
+.theme-toggle {
+  background: var(--header-button-bg);
+  border: none;
+  color: var(--text-inverse);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.2s;
+}
+.theme-toggle:hover { background: var(--header-button-hover); transform: rotate(15deg); }
+.theme-toggle svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#board {
+  display: flex;
+  padding: 20px;
+  align-items: flex-start;
+  width: max-content;
+  min-width: 100%;
+}
+/* Use margins instead of gap for reliable DnD position calculations (Trello pattern) */
+#board > .column { margin-right: 16px; }
+#board > #add-column-wrapper { margin-right: 16px; }
+/* Remove extra margin from last item to match flex gap behavior */
+#board > *:last-child { margin-right: 0; }
+
+.column {
+  background: var(--column-bg);
+  border-radius: 8px;
+  width: 286px;
+  flex: 0 0 286px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+  box-shadow: var(--column-shadow);
+}
+.column.dragging {
+  opacity: 0.9;
+  transform: rotate(3deg);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  z-index: 100;
+}
+/* Placeholder styling - Trello-style drop indicator */
+#board .dnd-placeholder {
+  flex: 0 0 286px;
+  margin-right: 16px;
+}
+.column-header {
+  padding: 12px 14px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+}
+.column-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: default;
+  user-select: none;
+  outline: none;
+}
+.column-title[contenteditable="true"] {
+  cursor: text;
+  user-select: text;
+  background: var(--column-title-editing-bg);
+}
+.column-title:focus { border-color: var(--input-focus); background: var(--column-title-editing-bg); }
+.column-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--column-count-bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin: 0 6px;
+}
+.column-menu {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1;
+}
+.column-menu:hover { background: var(--menu-hover-bg); }
+.card-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 8px;
+  min-height: 40px;
+}
+/* Empty columns: collapse the rest-state drop zone so the "+ Add a card"
+   button sits directly under the header (same 12px rhythm as non-empty
+   columns). While a drag targets this list, the dnd placeholder element
+   renders inside it, so :empty no longer matches and the 40px min-height
+   drop zone is restored automatically. */
+.card-list:empty {
+  min-height: 0;
+}
+/* ============================================================
+   Standardized app scrollbars
+   Single source of truth: the --scrollbar-* design tokens
+   defined in :root, html.dark and body.dark (size, radius,
+   track, thumb and its hover/active shades).
+
+   Reusable class: add `scrollbar` to any scrollable container
+   (card lists, modals, archived views, textareas...).
+
+   Three layers:
+   1. Universal ::-webkit-scrollbar-* base rules style EVERY scrollbar
+      (in-app containers and the main window viewport) with 8px size,
+      transparent track/corner and 4px-rounded thumb; both axes are
+      pinned explicitly and arrow buttons are hidden.
+   2. Main-window (document scroller) overrides on html/body use
+      --scrollbar-thumb-window* so the horizontal AND vertical window
+      bars stay legible over the board gradient in every theme.
+   3. Engines without ::-webkit-scrollbar support (e.g. current
+      Firefox) get the standard scrollbar-width/scrollbar-color
+      properties, applied only inside the @supports guard below.
+
+   IMPORTANT: scrollbar-width/scrollbar-color must stay inside
+   that guard. In Chromium 121+ any non-auto value of those
+   properties overrides ::-webkit-scrollbar-* styling (and
+   scrollbar-color inherits), which would destroy the exact
+   8px/4px appearance.
+   ============================================================ */
+@supports not (selector(::-webkit-scrollbar)) {
+  /* Main WINDOW scrollbars (document scroller) */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-window) var(--scrollbar-track);
+  }
+  /* In-app scroll containers */
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+}
+
+/* ---------- Base: every scrollbar in the app ---------- */
+::-webkit-scrollbar { width: var(--scrollbar-size); height: var(--scrollbar-size); }
+/* Pin each axis explicitly so the vertical and horizontal bars of any
+   container — including the main window — always share the same size. */
+::-webkit-scrollbar:vertical { width: var(--scrollbar-size); }
+::-webkit-scrollbar:horizontal { height: var(--scrollbar-size); }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-radius);
+  transition: background-color 0.15s ease;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+::-webkit-scrollbar-thumb:active { background: var(--scrollbar-thumb-active); }
+::-webkit-scrollbar-corner { background: var(--scrollbar-track); }
+/* No arrow buttons on either axis */
+::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+
+/* ---------- Main application window (document scroller) ----------
+   Applied explicitly to both <html> and <body> for robustness across
+   document-scroller quirks, covering BOTH the horizontal and vertical
+   window bars. They use --scrollbar-thumb-window* (see :root /
+   html.dark): a light thumb over the blue light-theme gradient and
+   the standard thumb in dark theme, so they always match the design. */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { background: var(--scrollbar-track); }
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner { background: var(--scrollbar-track); }
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-window);
+  border-radius: var(--scrollbar-radius);
+  transition: background-color 0.15s ease;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-window-hover); }
+html::-webkit-scrollbar-thumb:active,
+body::-webkit-scrollbar-thumb:active { background: var(--scrollbar-thumb-window-active); }
+
+.card {
+  background: var(--card-bg);
+  /* Transparent border reserves space so the accent border can appear on hover
+     without shifting the card's padding or reflowing neighbouring cards. */
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  box-shadow: var(--card-shadow);
+  cursor: grab;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  position: relative;
+  /* transform must not be transitioned: @hello-pangea/dnd writes inline
+     transforms imperatively during drag and its own drop animation; a CSS
+     transition here makes the card snap at mouse release. */
+  transition: box-shadow 0.12s, border-color 0.18s ease;
+}
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--card-border-hover);
+}
+.card.dragging { opacity: 0.4; }
+.card-description {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+/* Floating description preview shown on card hover. Uses position: fixed so it
+   escapes the card-list overflow clipping and never causes layout shifts.
+   The tooltip grows to fit its full content (no max-height, no scrollbar);
+   JS measures the intrinsic height and places it fully on-screen. */
+.card-desc-tooltip {
+  position: fixed;
+  z-index: 1000;
+  max-width: min(300px, calc(100vw - 16px));
+  padding: 10px 12px;
+  background: var(--tooltip-bg, var(--card-bg));
+  color: var(--text-primary);
+  border: 1px solid var(--card-border-hover);
+  border-radius: 6px;
+  box-shadow: var(--card-shadow-hover);
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+.card-due {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-top: 6px;
+  background: var(--card-due-bg);
+  color: var(--text-secondary);
+}
+.card-due.overdue { background: var(--card-due-overdue-bg); color: #fff; }
+.card-due.soon { background: var(--card-due-soon-bg); color: var(--card-due-soon-text); }
+.card-labels { display: flex; gap: 4px; margin-bottom: 6px; flex-wrap: wrap; }
+.card-label {
+  height: 8px;
+  border-radius: 2px;
+  width: 40px;
+}
+/* Board-of-origin badge on cards in the virtual All board */
+.card-board-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--card-due-bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+/* Inline edit button — top-right corner of card */
+.card-edit-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 4px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.card:hover .card-edit-btn { opacity: 0.6; }
+.card-edit-btn:hover { opacity: 1; background: var(--menu-hover-bg); }
+
+/* Inline editing state */
+.card.editing {
+  border-color: var(--input-focus);
+  cursor: default;
+}
+.card.editing:hover { box-shadow: var(--card-shadow); }
+
+/* Inline title input */
+.card-edit-input {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: inherit;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  outline: 2px solid transparent;
+  box-sizing: border-box;
+}
+.card-edit-input:focus { outline-color: var(--input-focus); }
+
+/* Inline description textarea */
+.card-edit-textarea {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 4px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 40px;
+  max-height: 120px;
+  background: var(--input-bg);
+  color: var(--text-secondary);
+  outline: 2px solid transparent;
+  box-sizing: border-box;
+}
+.card-edit-textarea:focus { outline-color: var(--input-focus); }
+/* Read-only columns (All board) don't offer a drag affordance on the header */
+.column.read-only .column-header { cursor: default; }
+
+.add-card-btn, .add-column-btn {
+  background: none;
+  border: none;
+  color: var(--add-btn-text);
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.add-card-btn:hover, .add-column-btn:hover { background: var(--add-btn-hover-bg); color: var(--add-btn-hover-text); }
+
+.add-card-form, .add-column-form {
+  padding: 6px 8px;
+}
+.add-card-form textarea, .add-column-form input {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+  outline: 2px solid transparent;
+  box-shadow: var(--card-shadow);
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+.add-card-form textarea:focus, .add-column-form input:focus { outline-color: var(--input-focus); }
+.form-actions { display: flex; gap: 6px; margin-top: 6px; align-items: center; }
+.form-actions .save {
+  background: var(--primary-btn-bg);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.form-actions .save:hover { background: var(--primary-btn-hover); }
+.form-actions .cancel {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.form-actions .cancel:hover { background: var(--menu-hover-bg); }
+
+#add-column-wrapper {
+  width: 286px;
+  flex: 0 0 286px;
+}
+#add-column-wrapper .add-column-btn {
+  background: var(--add-column-btn-bg);
+  color: var(--text-inverse);
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+}
+#add-column-wrapper .add-column-btn:hover { background: var(--add-column-btn-hover); }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--modal-overlay);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: var(--modal-bg);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 16px;
+  color: var(--text-primary);
+}
+.modal h2 { font-size: 18px; margin-bottom: 12px; color: var(--text-primary); }
+.modal label { display: block; font-size: 12px; color: var(--text-secondary); margin: 10px 0 4px; font-weight: 600; }
+.modal input[type=text], .modal textarea, .modal input[type=date] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+.modal input[type=text]:focus, .modal textarea:focus, .modal input[type=date]:focus { outline: none; border-color: var(--input-focus); }
+.modal textarea { resize: vertical; min-height: 80px; }
+.modal .label-picker { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.modal .label-chip {
+  height: 28px;
+  width: 64px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.1s;
+}
+.modal .label-chip:hover { transform: scale(1.05); }
+.modal .label-chip.selected { border-color: var(--label-chip-selected); }
+.modal-actions { display: flex; justify-content: space-between; margin-top: 16px; align-items: center; }
+.modal-actions .left { display: flex; gap: 8px; }
+.modal-actions .save { background: var(--primary-btn-bg); color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 500; }
+.modal-actions .save:hover { background: var(--primary-btn-hover); }
+.modal-actions .delete { background: none; border: none; color: var(--delete-btn); cursor: pointer; font-size: 14px; padding: 8px 12px; border-radius: 4px; }
+.modal-actions .delete:hover { background: var(--delete-btn-hover); }
+
+/* dnd-kit drag overlay */
+.drag-overlay {
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  opacity: 0.95;
+  border-radius: 8px;
+}
+
+/* Right-click context menu */
+.context-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+.context-menu {
+  position: fixed;
+  z-index: 201;
+  background: var(--input-bg);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  padding: 4px;
+  min-width: 140px;
+}
+.context-menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.context-menu-item:hover {
+  background: var(--menu-hover-bg);
+}
+.context-menu-item.danger {
+  color: var(--delete-btn);
+}
+.context-menu-item:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Column dropdown menu (positioned relative to column) */
+.column {
+  position: relative;
+}
+.column-menu-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  z-index: 201;
+  background: var(--input-bg);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  padding: 4px;
+  min-width: 160px;
+}
+.column-menu-dropdown.confirm-delete {
+  min-width: 200px;
+}
+.confirm-delete-text {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.4;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 4px;
+}
+
+/* Archived tab in header */
+.archived-tab {
+  opacity: 0.7;
+  font-style: italic;
+}
+.archived-tab.active {
+  opacity: 1;
+  font-style: normal;
+}
+
+/* Archived view */
+.archived-view {
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.archived-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.archived-search {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+}
+.archived-filter {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+.archived-sort-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.archived-sort-btn:hover {
+  background: var(--menu-hover-bg);
+}
+.archived-empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+.archived-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.archived-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.archived-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.1s;
+}
+.archived-table tbody tr:hover {
+  background: var(--menu-hover-bg);
+}
+.archived-table td {
+  padding: 10px 12px;
+  color: var(--text-primary);
+}
+.archived-card-title {
+  font-weight: 500;
+}
+.archived-date {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+.restore-btn {
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.restore-btn:hover {
+  background: var(--menu-hover-bg);
+}
+.archived-actions {
+  white-space: nowrap;
+  text-align: right;
+}
+.archived-actions .restore-btn {
+  margin-right: 8px;
+}
+.delete-btn {
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.delete-btn:hover {
+  background: #b00020;
+  border-color: #b00020;
+  color: #fff;
+}

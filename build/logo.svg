@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0079bf"/>
+      <stop offset="1" stop-color="#5067bf"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#091e42" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background tile (full-canvas rounded rect; macOS applies the squircle mask for the packaged .icns) -->
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- Back card (notes/references) -->
+  <g filter="url(#shadow)">
+    <rect x="152" y="102" width="260" height="260" rx="44" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- Front card (board) -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="150" width="260" height="260" rx="44" fill="#ffffff"/>
+  </g>
+
+  <!-- Accent lines on front card -->
+  <rect x="144" y="198" width="150" height="22" rx="11" fill="#0079bf"/>
+  <rect x="144" y="236" width="108" height="22" rx="11" fill="#e6e9ef"/>
+  <rect x="144" y="274" width="126" height="22" rx="11" fill="#e6e9ef"/>
+</svg>
