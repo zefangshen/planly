@@ -21,3 +21,5 @@ npm-debug.log*
 # Editor
 .idea/
 *.swp
+
+docs/.plan
